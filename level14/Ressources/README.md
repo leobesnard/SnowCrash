@@ -22,7 +22,7 @@ We see that we it is protected from using gdb.
 So we try to disasemble the main to understand better what is happening.
 
 Here is the first part we need to see.
-	```Dump of assembler code for function main:
+	Dump of assembler code for function main:
 	   0x08048946 <+0>:	push   %ebp
 	   0x08048947 <+1>:	mov    %esp,%ebp
 	   0x08048949 <+3>:	push   %ebx
@@ -38,7 +38,7 @@ Here is the first part we need to see.
 	   0x08048982 <+60>:	movl   $0x0,(%esp)
 	   0x08048989 <+67>:	call   0x8048540 <ptrace@plt>
 	   0x0804898e <+72>:	test   %eax,%eax
-	   0x08048990 <+74>:	jns    0x80489a8 <main+98>```
+	   0x08048990 <+74>:	jns    0x80489a8 <main+98>
 
 We see that it use ptrace to protect the script from debugging. (it check if there is only one process tracing it so when we try to debug there the gdb process and himself)
 
